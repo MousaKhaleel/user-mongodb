@@ -40,18 +40,19 @@ app.get("/form", function(req,res)
 
 // var fs=require('fs')
 
-var ls=require('node-localstorage')
+var LocalStorage = require('node-localstorage').LocalStorage;
+var ls = new LocalStorage('./scratch');
 
 app.post("/login",urlEncoded, async(req,res)=>
 {
       const finduser= await collection.findOne({'email':req.body.email,'password':req.body.password})
       if (finduser){
           // fs.writeFile("user.txt", finduser.email),'password':req.body.password,'username':req.body.username,'age':req.body.age,'gender':req.body.gender
-          ls.LocalStorage.setItem("email",req.body.email)
-          ls.LocalStorage.setItem("password",req.body.password)
-          ls.LocalStorage.setItem("username",req.body.username)
-          ls.LocalStorage.setItem("age",req.body.age)
-          ls.LocalStorage.setItem("gender",req.body.gender)
+          ls.setItem("email",req.body.email)
+          ls.setItem("password",req.body.password)
+          ls.setItem("username",req.body.username)
+          ls.setItem("age",req.body.age)
+          ls.setItem("gender",req.body.gender)
           res.sendFile(__dirname+"/userInfo.html")
       }
       else{

@@ -7,8 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h1 onclick="y()" id="email">hi</h1>
-    <h1 id="password"></h1>
+    <h1 onclick="onload()" id="email">hi</h1>
+    <h1 id="password">welcome user</h1>
     <h1 id="username"></h1>
     <h1 id="age"></h1>
     <h1 id="gender"></h1>
@@ -25,7 +25,7 @@
             // document.getElementById('email').innerHTML=data;
             // }
 
-            function y()
+            function onload()
         {  
 
         var e=localStorage.getItem("email")
