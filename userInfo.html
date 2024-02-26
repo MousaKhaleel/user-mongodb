@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1 onclick="onload()" id="email">hi</h1>
+    <h1 id="email">hi</h1>
     <h1 id="password">welcome user</h1>
     <h1 id="username"></h1>
     <h1 id="age"></h1>
@@ -28,18 +28,18 @@
             function onload()
         {  
 
-        var e=localStorage.getItem("email")
-        var p=localStorage.getItem("password")
-        var u=localStorage.getItem("username")
-        var a=localStorage.getItem("age")
-        var g=localStorage.getItem("gender")
+        var e=localStorage.getItem("email");
+        var p=localStorage.getItem("password");
+        var u=localStorage.getItem("username");
+        var a=localStorage.getItem("age");
+        var g=localStorage.getItem("gender");
 
 
-        document.getElementById("email").innerHTML= e
-        document.getElementById("password").innerHTML= p
-        document.getElementById("username").innerHTML= u
-        document.getElementById("age").innerHTML= a
-        document.getElementById("gender").innerHTML= g
+        document.getElementById("email").innerHTML= "welcome" + e;
+        document.getElementById("password").innerHTML= p;
+        document.getElementById("username").innerHTML= u;
+        document.getElementById("age").innerHTML= a;
+        document.getElementById("gender").innerHTML= g;
 }
 
 
