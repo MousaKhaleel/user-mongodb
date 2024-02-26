@@ -47,11 +47,11 @@ app.post("/login",urlEncoded, async(req,res)=>
       const finduser= await collection.findOne({'email':req.body.email,'password':req.body.password})
       if (finduser){
           // fs.writeFile("user.txt", finduser.email),'password':req.body.password,'username':req.body.username,'age':req.body.age,'gender':req.body.gender
-          localStorage.setItem("email",req.body.email)
-          localStorage.setItem("password",req.body.password)
-          localStorage.setItem("username",req.body.username)
-          localStorage.setItem("age",req.body.age)
-          localStorage.setItem("gender",req.body.gender)
+          ls.LocalStorage.setItem("email",req.body.email)
+          ls.LocalStorage.setItem("password",req.body.password)
+          ls.LocalStorage.setItem("username",req.body.username)
+          ls.LocalStorage.setItem("age",req.body.age)
+          ls.LocalStorage.setItem("gender",req.body.gender)
           res.sendFile(__dirname+"/userInfo.html")
       }
       else{
