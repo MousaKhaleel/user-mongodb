@@ -7,17 +7,65 @@
     <title>Document</title>
 </head>
 <body>
-    <h1 id="email"></h1>
-    <!-- <h1 id="password"></h1>
+    <h1 onclick="y()" id="email">hi</h1>
+    <h1 id="password"></h1>
     <h1 id="username"></h1>
     <h1 id="age"></h1>
-    <h1 id="gender"></h1> -->
+    <h1 id="gender"></h1>
         <script>
-            var data;
-            function onload(){
-                data=localStorage.getItem('cUser')
-            }
-            document.getElementById('email').innerHTML=data.email;
+
+// fetch("/user.txt")
+//   .then((res) => res.text())
+//   .then((text) => {
+//     document.getElementById('email').innerHTML=text;
+//    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            // var data;
+            // function onload(){
+            //     data=localStorage.getItem('cUser')
+            // document.getElementById('email').innerHTML=data;
+            // }
+
+            function y()
+        {  
+
+        var e=localStorage.getItem("email")
+        var p=localStorage.getItem("password")
+        var u=localStorage.getItem("username")
+        var a=localStorage.getItem("age")
+        var g=localStorage.getItem("gender")
+
+
+        document.getElementById("email").innerHTML= e
+        document.getElementById("password").innerHTML= p
+        document.getElementById("username").innerHTML= u
+        document.getElementById("age").innerHTML= a
+        document.getElementById("gender").innerHTML= g
+}
+
+
+        // var xmlHttp = new XMLHttpRequest();
+        // xmlHttp.open( "GET", "http://localhost:9000/userInfo", false ); // false for synchronous request
+        // xmlHttp.send( null );
+        // var myres = xmlHttp.responseText;
+
+
             // document.getElementById('password').innerHTML=data.password;
             // document.getElementById('username').innerHTML=data.username;
             // document.getElementById('age').innerHTML=data.age;

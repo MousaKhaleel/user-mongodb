@@ -38,14 +38,20 @@ app.get("/form", function(req,res)
    res.sendFile(__dirname+"/form.html")
 })
 
-var fs=require('fs')
+// var fs=require('fs')
+
+var ls=require('node-localstorage')
 
 app.post("/login",urlEncoded, async(req,res)=>
 {
-      const finduser= await collection.findOne({'email':req.body.email})
+      const finduser= await collection.findOne({'email':req.body.email,'password':req.body.password})
       if (finduser){
-        //   fs.writeFileSync("user.txt", finduser.email),'password':req.body.password,'username':req.body.username,'age':req.body.age,'gender':req.body.gender
-        localStorage.setItem('cUser',finduser.email)
+          // fs.writeFile("user.txt", finduser.email),'password':req.body.password,'username':req.body.username,'age':req.body.age,'gender':req.body.gender
+          localStorage.setItem("email",req.body.email)
+          localStorage.setItem("password",req.body.password)
+          localStorage.setItem("username",req.body.username)
+          localStorage.setItem("age",req.body.age)
+          localStorage.setItem("gender",req.body.gender)
           res.sendFile(__dirname+"/userInfo.html")
       }
       else{
@@ -60,7 +66,10 @@ app.post("/login",urlEncoded, async(req,res)=>
 
 app.post("/register",urlEncoded, async(req,res)=>
 {    //find 
-     const createuser= await collection.insertOne({'userName': req.body.userName})
+     const find= await collection.findOne({'email': req.body.email})
+     const createuser='';
+     if(!find)
+     createuser= await collection.insertOne({'username': req.body.username,'password':req.body.password,'username':req.body.username,'age':req.body.age,'gender':req.body.gender})
     
 })
 

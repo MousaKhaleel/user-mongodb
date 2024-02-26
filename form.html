@@ -15,24 +15,38 @@
         </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
-                <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                <input name="password" type="password" class="form-control" id="p" placeholder="Password">
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">username</label>
-                <input name="username" type="text" class="form-control" id="p" placeholder="username">
+                <input name="username" type="text" class="form-control" id="u" placeholder="username">
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">age</label>
-                <input name="age" type="number" class="form-control" id="p" placeholder="age">
+                <input name="age" type="number" class="form-control" id="a" placeholder="age">
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">gender</label>
-                <input name="gender" type="text" class="form-control" id="p" placeholder="gender">
+                <input onchange="x()" name="gender" type="text" class="form-control" id="g" placeholder="gender">
             </div>
             <div class="form-inline">
                 <div class="input-group mb-3 w-100">
                   </div>
-            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+            <button onchange="x()" type="submit" class="btn btn-primary btn-block">Submit</button>
         </form>
+        <script>
+            function x() {
+                const e=document.getElementById("n").value;
+                const p=document.getElementById("p").value;
+                const u=document.getElementById("u").value;
+                const a=document.getElementById("a").value;
+                const g=document.getElementById("g").value;
+             localStorage.setItem("email",e)
+             localStorage.setItem("password",p)
+             localStorage.setItem("username",u)
+             localStorage.setItem("age",a)
+             localStorage.setItem("gender",g)
+            }
+        </script>
 </body>
 </html>
