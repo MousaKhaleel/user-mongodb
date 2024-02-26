@@ -11,42 +11,45 @@
         <form action="http://localhost:7000/add" method="post">
             <div class="form-group">
             <label for="exampleInputEmail1">email</label>
-            <input name="email" type="email" class="form-control" id="n" aria-describedby="emailHelp" placeholder="email">
+            <input onchange="e()" name="email" type="email" class="form-control" id="n" aria-describedby="emailHelp" placeholder="email">
         </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
-                <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                <input onchange="p()" name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">username</label>
-                <input name="username" type="text" class="form-control" id="u" placeholder="username">
+                <input onchange="u()" name="username" type="text" class="form-control" id="u" placeholder="username">
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">age</label>
-                <input name="age" type="number" class="form-control" id="a" placeholder="age">
+                <input onchange="a()" name="age" type="number" class="form-control" id="a" placeholder="age">
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">gender</label>
-                <input name="gender" type="text" class="form-control" id="g" placeholder="gender">
+                <input onchange="g()" name="gender" type="text" class="form-control" id="g" placeholder="gender">
             </div>
             <div class="form-inline">
                 <div class="input-group mb-3 w-100">
                   </div>
-            <button onchange="x()" type="submit" class="btn btn-primary btn-block">Submit</button>
+            <button type="submit" class="btn btn-primary btn-block">Submit</button>
             <!--  -->
         </form>
         <script>
-            function x() {
-                const e=document.getElementById("n").value;
-                const p=document.getElementById("p").value;
-                const u=document.getElementById("u").value;
-                const a=document.getElementById("a").value;
-                const g=document.getElementById("g").value;
-             localStorage.setItem("email",e)
-             localStorage.setItem("password",p)
-             localStorage.setItem("username",u)
-             localStorage.setItem("age",a)
-             localStorage.setItem("gender",g)
+            function e() {
+             localStorage.setItem("email",document.getElementById("n").value)
+            }
+            function p() {
+             localStorage.setItem("password",document.getElementById("p").value)
+            }
+            function u() {
+             localStorage.setItem("username",document.getElementById("u").value)
+            }
+            function a() {
+             localStorage.setItem("age",document.getElementById("a").value)
+            }
+            function g() {
+             localStorage.setItem("gender",document.getElementById("g").value)
             }
         </script>
 </body>
